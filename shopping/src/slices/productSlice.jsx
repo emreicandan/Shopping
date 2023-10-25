@@ -5,7 +5,7 @@ export const productSlice = createSlice({
     name: "product",
     initialState: {
         product: productData,
-        updatedProduct: []
+        updatedProduct:[]
     },
     reducers: {
         goDetail: (state, action) => {

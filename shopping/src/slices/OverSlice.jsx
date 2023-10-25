@@ -8,7 +8,6 @@ export const overSlice = createSlice({
     },
     reducers: {
         addDetail: (state, action) => {
-            debugger;
             state.detail.push(action.payload)
         }
     }

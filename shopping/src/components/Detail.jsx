@@ -3,6 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { GoChevronUp, GoChevronDown } from 'react-icons/go'
 import { increase, decrease } from '../slices/productSlice'
 import { addBasket } from '../slices/basketSlice'
+import {useCollectionData} from 'react-firebase-hooks/firestore';
+import {db} from '../app/Firebase/firebase';
+import {collection , addDoc} from 'firebase/firestore';
+
+
+
+const ref = collection(db, "items");
 
 function Detail() {
     const { updatedProduct, piece } = useSelector((state) => state.product)
@@ -26,7 +33,7 @@ function Detail() {
                                         <button onClick={() => { dispatch(increase(item.id)) }} className='btn'> <GoChevronUp /> </button>
                                         <p className='ms-3 mt-4'>{item.piece}</p>
                                         <button onClick={() => { dispatch(decrease(item.id)) }} className='btn mb-4'> <GoChevronDown /> </button>
-                                        <button onClick={() => { dispatch(addBasket(item)) }} className="btn btn-dark mb-5 ms-5 btn-lg" type="button">Sepete Ekle</button>
+                                        <button onClick={() => {dispatch(addBasket(item))}} className="btn btn-dark mb-5 ms-5 btn-lg" type="button">Sepete Ekle</button>
                                     </div>
                                 </div>
                             </div>

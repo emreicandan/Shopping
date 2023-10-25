@@ -7,6 +7,7 @@ export const basketSlice = createSlice({
         basket: [],
         piece: 0,
         total: 0,
+        use : []
     },
     reducers: {
         addBasket: (state, action) => {
@@ -26,9 +27,12 @@ export const basketSlice = createSlice({
             });
             state.piece = totalPiece,
                 state.total = totalPrice
+        },
+        setUse : (state ,action) =>{
+            state.use = action.payload
         }
     }
 })
 
-export const { addBasket, removeItem, calculateTotal } = basketSlice.actions;
+export const { addBasket, removeItem, calculateTotal  , setUse} = basketSlice.actions;
 export default basketSlice.reducer;

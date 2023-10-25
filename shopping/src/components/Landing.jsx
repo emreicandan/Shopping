@@ -1,12 +1,21 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { goDetail } from '../slices/productSlice'
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { goDetail } from '../slices/productSlice';
+import {useAuthState} from 'react-firebase-hooks/auth';
+import { auth } from '../app/Firebase/firebase';
+import {signOut} from 'firebase/auth'
 
 
 function Landing() {
-    const { product } = useSelector((state) => state.product)
+    const { product } = useSelector((state) => state.product);
     const dispatch = useDispatch();
+    const [user , isLoading] = useAuthState(auth);
+
+
+    const handleClick =()=>{
+        signOut(auth)
+    }
     return (
         <div className='container'>
             <div className="row">
@@ -37,7 +46,7 @@ function Landing() {
                                         <div className="card-body">
                                             <h5 className="card-title">{item.name}</h5>
                                             <p className='fs-3 fw-bold'> {item.price}₺</p>
-                                            <Link to={'detail'}> <button onClick={() => { dispatch(goDetail(item.id)) }} className='btn btn-warning'>Ürünü İncele</button> </Link>
+                                            <Link to={'/detail'}> <button onClick={() => { dispatch(goDetail(item.id)) }} className='btn btn-warning'>Ürünü İncele</button> </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -46,6 +55,11 @@ function Landing() {
                     })
                 }
             </div>
+                {
+                user ?             <div className='border border-2 my-5 p-3 rounded'>
+                <h1 className='fs-5'>Merhaba {user.displayName} <span className='text-danger'>Vitaminbar.com</span> sitemize hoşgeldin keyfli alışverişler dileriz.</h1>
+                </div> : ""
+                }
         </div>
     )
 }
