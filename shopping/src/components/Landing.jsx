@@ -4,18 +4,14 @@ import { Link } from 'react-router-dom';
 import { goDetail } from '../slices/productSlice';
 import {useAuthState} from 'react-firebase-hooks/auth';
 import { auth } from '../app/Firebase/firebase';
-import {signOut} from 'firebase/auth'
+import {signOut} from 'firebase/auth';
 
 
 function Landing() {
     const { product } = useSelector((state) => state.product);
     const dispatch = useDispatch();
     const [user , isLoading] = useAuthState(auth);
-
-
-    const handleClick =()=>{
-        signOut(auth)
-    }
+    
     return (
         <div className='container'>
             <div className="row">

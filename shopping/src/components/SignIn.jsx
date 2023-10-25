@@ -1,8 +1,8 @@
-import React from 'react'
-import { useSelector , useDispatch } from 'react-redux'
-import {signInWithEmailAndPassword} from 'firebase/auth'
-import { emailChange , passChange } from '../slices/userSlice'
-import { auth } from '../app/Firebase/firebase'
+import React from 'react';
+import { useSelector , useDispatch } from 'react-redux';
+import {signInWithEmailAndPassword} from 'firebase/auth';
+import { emailChange , passChange } from '../slices/userSlice';
+import { auth } from '../app/Firebase/firebase';
 import { Link } from 'react-router-dom';
 
 

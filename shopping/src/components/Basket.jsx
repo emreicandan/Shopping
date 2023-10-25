@@ -13,19 +13,19 @@ import {collection , addDoc} from 'firebase/firestore';
 const ref = collection(db , 'items');
 
 function Basket() {
-    const { basket, total } = useSelector((state) => state.basket)
+    const { basket, total } = useSelector((state) => state.basket);
     const dispatch = useDispatch();
-    const [data , isLoading] = useCollectionData(ref)
+    const [data , isLoading] = useCollectionData(ref);
  
     useEffect(() => {
-        dispatch(calculateTotal())
-    }, [basket])
+        dispatch(calculateTotal());
+    }, [basket]);
 
 
     const onSubmit = async (values, actions) => {
-        dispatch(addDetail(values))
+        dispatch(addDetail(values));
         await new Promise((resolve) => {
-            setTimeout(resolve, 1000)
+            setTimeout(resolve, 1000);
         });
         actions.resetForm();
 
@@ -43,7 +43,7 @@ function Basket() {
         },
         validationSchema: Schema,
         onSubmit,
-    })
+    });
 
     return (
         <div className="container">
@@ -132,7 +132,7 @@ function Basket() {
                 <hr />
             </div>
         </div>
-    )
+   )
 }
 
 export default Basket

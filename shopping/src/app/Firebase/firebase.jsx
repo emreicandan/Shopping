@@ -1,8 +1,8 @@
 import {initializeApp} from 'firebase/app';
 import {getAuth} from 'firebase/auth';
 import {getFirestore , collection , onSnapshot , deleteDoc, addDoc , doc} from 'firebase/firestore';
-import { useEffect ,useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect  } from 'react';
+import { useDispatch } from 'react-redux';
 import { setUse } from '../../slices/basketSlice';
 
 
@@ -24,7 +24,7 @@ export const auth = getAuth(app);
 
 
 export const db = getFirestore(app);
-export const ref = collection(db , "items")
+export const ref = collection(db , "items");
 
 export const useProductListener =()=>{
 

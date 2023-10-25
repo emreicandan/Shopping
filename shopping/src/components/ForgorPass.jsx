@@ -1,8 +1,8 @@
-import React from 'react'
-import {sendPasswordResetEmail} from 'firebase/auth'
-import { auth } from '../app/Firebase/firebase'
-import { useDispatch, useSelector } from 'react-redux'
-import { emailChange } from '../slices/userSlice'
+import React from 'react';
+import {sendPasswordResetEmail} from 'firebase/auth';
+import { auth } from '../app/Firebase/firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { emailChange } from '../slices/userSlice';
 
 function ForgorPass() {
     const {email} = useSelector((state)=>state.user);

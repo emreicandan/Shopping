@@ -1,5 +1,5 @@
-import React from 'react'
-import { collection, doc } from 'firebase/firestore'
+import React from 'react';
+import { collection, doc } from 'firebase/firestore';
 import { db, deleteProduct, addProduct, auth } from '../app/Firebase/firebase';
 import { useProductListener } from '../app/Firebase/firebase';
 import { useSelector } from 'react-redux';

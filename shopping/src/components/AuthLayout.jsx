@@ -4,7 +4,7 @@ import {useAuthState} from 'react-firebase-hooks/auth';
 import { auth } from '../app/Firebase/firebase';
 
 function AuthLayout() {
-const [user , isLoading] = useAuthState(auth)
+const [user , isLoading] = useAuthState(auth);
 
 
 

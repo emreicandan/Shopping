@@ -7,12 +7,12 @@ import { CgProfile } from 'react-icons/cg'
 
 function Navbar() {
 
-  const { basket, piece } = useSelector((state) => state.basket)
-  const dispatch = useDispatch()
+  const { basket, piece } = useSelector((state) => state.basket);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(calculateTotal())
-  }, [basket])
+    dispatch(calculateTotal());
+  }, [basket]);
 
 
   return (

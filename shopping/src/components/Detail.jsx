@@ -1,9 +1,8 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { GoChevronUp, GoChevronDown } from 'react-icons/go'
-import { increase, decrease } from '../slices/productSlice'
-import { addBasket } from '../slices/basketSlice'
-import {useCollectionData} from 'react-firebase-hooks/firestore';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { GoChevronUp, GoChevronDown } from 'react-icons/go';
+import { increase, decrease } from '../slices/productSlice';
+import { addBasket } from '../slices/basketSlice';
 import {db} from '../app/Firebase/firebase';
 import {collection , addDoc} from 'firebase/firestore';
 

@@ -1,15 +1,15 @@
-import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Landing from './components/Landing'
-import Detail from './components/Detail'
-import Basket from './components/Basket'
-import Overview from './components/Overview'
-import MainLayout from './components/MainLayout'
-import AuthLayout from './components/AuthLayout'
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
-import ForgorPass from './components/ForgorPass'
-import Profile from './components/Profile'
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Landing from './components/Landing';
+import Detail from './components/Detail';
+import Basket from './components/Basket';
+import Overview from './components/Overview';
+import MainLayout from './components/MainLayout';
+import AuthLayout from './components/AuthLayout';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import ForgorPass from './components/ForgorPass';
+import Profile from './components/Profile';
 function App() {
 
 

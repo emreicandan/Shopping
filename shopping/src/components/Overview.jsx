@@ -1,9 +1,9 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 function Overview() {
-  const { basket } = useSelector((state) => state.basket)
-  const { detail } = useSelector((state) => state.overview)
+  const { basket } = useSelector((state) => state.basket);
+  const { detail } = useSelector((state) => state.overview);
   return (
     <div className="container">
     <div className="row border border-1 rounded mt-3">
